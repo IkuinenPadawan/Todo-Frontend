@@ -23,7 +23,7 @@ function TodoForm(props) {
   };
 
   const checkPriorityValue = (value) => {
-    return props.todoFormState.priority === value;
+    return props.todoFormState.priority.toString() === value;
   };
 
   return (
