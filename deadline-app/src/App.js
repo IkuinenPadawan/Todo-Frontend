@@ -17,11 +17,8 @@ const DEFAULT_LIST = 'deadlines';
 // Cleanup
 // Rename a bunch of functions and variables for clarity?
 // Start extracting components where necessary, again for clarity.
-// Move component specific functions under objects?
-//    App is becoming cluttered, not to mention passing props
-//    to child components.
-// More styling for collapsible tasks. (buttons etc.)
 // Confirmation dialog for delete button?
+// Add collapse/expand all buttons for lists!
 
 // NOTE! todoFormState now generates random id for added items for
 // item removal to work.
@@ -413,6 +410,7 @@ class App extends React.Component {
             />
             <ListComponent
               todos={this.state.todos}
+              lists={this.state.lists}
               todoHandler={this.todoHandler}
               collapsibleStates={this.state.collapsibleStates}
               isLoaded={this.state.isLoaded}
