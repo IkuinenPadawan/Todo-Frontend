@@ -65,6 +65,12 @@ ul {
 // App styling
 .app {
   display: flex;
+  justify-content: center;
+}
+
+// Hide action button when screen is big enough for the form
+.floating-action-button {
+  display: none;
 }
 
 // Form component styling
@@ -289,6 +295,7 @@ ul {
 .todo-list {
   margin: 2rem 2rem;
   width: 500px;
+  min-width: 430px;
 
   .list > ul {
     margin: 1rem 0;
@@ -416,5 +423,72 @@ ul {
 
   li {
     padding-left: 1rem;
+  }
+}
+
+// OOF this is nasty
+@media (max-width: 1050px) {
+  // Floating button styling
+  .floating-action-button {
+    display: block;
+    z-index: 2;
+    font-size: 24px;
+    width: 72px;
+    height: 72px;
+    position: fixed;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background-color: $btn-green;
+    bottom: 15vh;
+    right: 50vw;
+    // Same as setting origin to center
+    transform: translate(50%, 50%);
+    cursor: pointer;
+
+    // Centering the plus icon on the button
+    i {
+      position: absolute;
+      color: #fff;
+      top: 24px;
+      left: 26px;
+    }
+  }
+
+  .todo-list {
+    z-index: 1;
+  }
+
+  .form-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  .form-visible {
+    z-index: 998;
+    position: absolute;
+    transform-origin: 0 0;
+    transform: none;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  .list-visible {
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .list-hidden {
+    opacity: 0;
+  }
+
+  // fab is shorthand for floating-action-button
+  .fab-visible {
+    opacity: 1;
+  }
+
+  .fab-hidden {
+    opacity: 0;
   }
 }
