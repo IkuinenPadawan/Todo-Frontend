@@ -3,6 +3,8 @@ Aleksi Muikku
 
 Juuso Melentjeff
 
+Backend github link: https://github.com/IkuinenPadawan/Todo-Backend
+
 # Deadline App
 
 Deadline App was created with React framework as a project for TAMK software production orientation Frontend and Backend courses. Goal was to create a web based to-do application that connects to a RESTful API so to-dos could be saved to a database. Project was a team effort between two students. Our goal was to make a to-do application for students with a focus on deadlines.
